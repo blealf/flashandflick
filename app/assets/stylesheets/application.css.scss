@@ -1,0 +1,27 @@
+
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "materialize";
+@import "font-awesome";
+@import "layouts";
+@import "galleries";
+@import "contacts";
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+    
+$main-bg-color: #fafafa;
+$nav-color: #424242;
+$nav-links-color: #424242;
+
+body {
+    background: $main-bg-color;
+    // color: white;
+    font-family: 'Courgette', cursive;
+}
+
+.material-icons {
+    color: #212121;
+}
+
+.material-icons.active {
+    color: #263238 !important;
+}

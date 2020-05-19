@@ -1,0 +1,90 @@
+<h3 class="center">Gallery</h3>
+
+<%# SLIDER %>
+<div class="container">
+    <section class="slider gallery_slider">
+        <ul class="slides">
+            <% @gallery_top.each do |gallery| %>
+            <% gallery.photos.each do |image| %>
+            <li>
+                <img src="<%= url_for(image) %>">
+            </li>
+            <% end %>
+            <% end %>
+        </ul>
+    </section>
+</div>
+
+<%# UPLOAD NEW IMAGE %>
+<div class="container new_btn">
+    <% if current_admin_user.present? %>
+    <%= link_to 'Upload New Image', new_gallery_path, class: 'btn grey darken-4' %>
+    <% end %>
+</div>
+
+<%# TAGS for filtering %>
+<div class="container">
+    <div class="chips">
+        <% Tag.all.each do |tag|%>
+        <div class="chip">
+            <%= link_to  tag.name, galleries_path(:tag => tag.name) %>
+            <%#= tag.name %>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<%# _photos = [] %>
+<div class="section container grey lighten-4 center">
+    <%#= will_paginate @galleries %>
+</div>
+<%# PHOTOS OUTPUT %>
+<div class="row">
+    <% @galleries.each do |gallery| %>
+        <% if gallery.photos != nil %>
+            <% gallery.photos.each do |photo| %>
+                <div class="col s12 m4 l3">
+                    <div class="card">
+                        <div class="card-image">
+                            <%# image = MiniMagick::Image.open(url_for(gallery.photo)) %>
+                            <%#= image_tag gallery.photo.variant(resize_to_fit: [100, 100]), class: 'materialboxed responsive-img' %>
+                            <%#= image_tag gallery.photo.variant(resize: "1000x1000", flip: nil), size: "200x200", class: 'materialboxed responsive-img' %>
+
+                            <%= image_tag(photo, class: 'materialboxed responsive-img') %>
+                            <%# _photos.push(photo) %>
+                            <span class="card-title"><%#= gallery.name %></span>
+                        </div>
+                        <% if current_admin_user.present? %>
+                            <div class="card-content" id="<%=photo%>">
+                                <% if gallery.photos.length == 1%>
+                                <%= link_to 'Edit', edit_gallery_path(gallery), class: 'btn green' %>
+                                <% end %>
+                                <%= link_to 'Delete', delete_one_image_gallery_path(photo), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red delete'  %>
+
+                                <%#= photo %>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
+<div class="section container grey lighten-4 center">
+    <%#= will_paginate @galleries %>
+</div>
+
+
+<%#= _photos.length %>
+<%#= @my_photos.length %>
+<%#= @test_photos.length %>
+<%#= @myphotos %>
+
+<%# Gallery.get_photos(@galleries).each do |photo|%>
+    <%#= photo%>
+<%# end %>
+
+
+
+
+

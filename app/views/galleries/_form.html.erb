@@ -1,0 +1,64 @@
+<div class="container">
+  <%= form_with(model: gallery, local: true, class: 'row') do |form| %>
+  <% if gallery.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+    <ul>
+      <% gallery.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :image_type %><br>
+    <%= form.select :image_type, Gallery.type, {:include_blank => ""}, class: "blue-grey-text text-darken-2" %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :tag_id %>
+    <%= form.select(:tag_id, Tag.all.collect {|p| [ p.name, p.id ] }, { include_blank: ""}) %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :usage %>
+    <%= form.select :usage, Gallery.usage, {:include_blank => "", :class => "blue-grey-text text-darken-4"} %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :caption %>
+    <%= form.text_field :caption %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <%= form.label :sub_caption %>
+    <%= form.text_field :sub_caption %>
+  </div>
+
+  <div class="input-field col s6 m6">
+    <div class="file-field input-field ">
+      <div class="btn grey darken-4">
+        <span>Images</span>
+        <%= form.file_field :photos, multiple: true, accept: 'image/png,image/gif,image/jpeg' %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate " type="text" placeholder="Upload Images Here">
+      </div>
+    </div>
+  </div>
+
+  <div class="actions col s12 m12">
+    <%= form.submit "Add Photo", class: 'btn grey darken-4' %>
+  </div>
+  <% end %>
+</div>

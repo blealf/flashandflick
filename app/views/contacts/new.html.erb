@@ -1,0 +1,45 @@
+
+<div class="container contact-form">
+    <%= render 'shared/alerts' %>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title contact-title">
+                        <h4 class="center">About Me</h4>
+                    </div>
+                    <% if @about_me.present? %>
+                        <p class="flow-text about_me">
+                            <%= @about_me.description %>
+                        </p>
+                    <% end %>
+                    
+                </div>
+                <div class="card-action email">
+                        <% if @email.present? %>
+                            <h6>Email: <a href="mailto:<%=@email.link%>">
+                                <%= @email.link%></a> 
+                            </h6>
+                        <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title contact-title">
+                        <h4 class="center">Contact Me</h4>
+                    </div>
+                    <%= render 'form', contact: @contact %>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<%# @array.each do |a|%>
+<%#= a %>
+<%# end %>
+
+

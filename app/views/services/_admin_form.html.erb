@@ -1,0 +1,24 @@
+<div class="container row">
+    <%= semantic_form_for [:admin, @service], class: 'row', builder: ActiveAdmin::FormBuilder do |form|%>
+
+
+    <div class="field col s12">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class="field col s12">
+        <%= form.label :description %>
+        <%= form.text_area :description, :class => "text_area" %>
+    </div>
+
+    <div class="field col s6 m6">
+        <%= form.label :service_type %><br>
+        <%= form.select :service_type, Gallery.type, {:include_blank => "Service Type"}, class: 'teal' %>
+    </div>
+
+    <div class="actions col s12 m12">
+        <%= form.submit class: 'btn teal' %>
+    </div>
+    <% end %>
+</div>

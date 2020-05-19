@@ -1,0 +1,65 @@
+<h3 class="center">Photographs</h3>
+
+<div class="container gallery_c">
+    <div class="carousel #carousel-slider center">
+        <% @photograph_top.each do |photograph| %>
+            <% photograph.photos.each do |top| %>
+                <%= image_tag(top, class: 'carousel-item ') %>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container services">
+    <h4 class="center">Services Offered</h4>
+    <div class="row">
+        <% @services.each do |service| %>
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <a href="#!" ><i class="material-icons">grade</i>
+                        </a>
+                        <span><%= service.name %></span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="chips">
+        <% Tag.all.each do |tag|%>
+        <div class="chip">
+            <%= link_to  tag.name, photography_index_path(:tag => tag.name) %>
+            <%#= tag.name %>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="row">
+    <% @photographs.each do |photograph| %>
+        <% if photograph.photos != nil %>
+            <% photograph.photos.each do |photo| %>
+                <div class="col s12 m4 l3">
+                    <div class="card">
+                        <div class="card-image">
+                            <%# image = MiniMagick::Image.open(url_for(photograph.photo)) %>
+                            <%#= image_tag photograph.photo.variant(resize_to_fit: [100, 100]), class: 'materialboxed responsive-img' %>
+                            <%#= image_tag photograph.photo.variant(resize: "1000x1000", flip: nil), size: "200x200", class: 'materialboxed responsive-img' %>
+
+                            <%= image_tag(photo, class: 'materialboxed responsive-img') %>
+
+                            <span class="card-title">
+                                <%#= photograph.name %></span>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>

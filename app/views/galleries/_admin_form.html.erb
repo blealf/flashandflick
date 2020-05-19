@@ -1,0 +1,51 @@
+<div class="container row">
+    <%= semantic_form_for [:admin, @gallery], class: 'row', builder: ActiveAdmin::FormBuilder do |form|%>
+
+
+    <div class="input-field col s6 m6">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class="input-field col s6 m6">
+        <%= form.label "Photograph or Design artifact" %><br>
+        <%= form.select :image_type, Gallery.type, {:include_blank => ""}, class: '' %>
+    </div>
+
+    <div class="input-field col s6 m6">
+        <%= form.label :caption %>
+        <%= form.text_field :caption %>
+    </div>
+
+    <div class="input-field col s6 m6">
+        <%= form.label "Do you want this image on a specific page?" %>
+        <%= form.select :usage, Gallery.usage, {:include_blank => ""} %>
+    </div>
+
+    <div class="input-field col s6 m6">
+        <%= form.label :sub_caption %>
+        <%= form.text_field :sub_caption %>
+    </div>
+
+    <div class="input-field col s12 tag">
+        <%= form.label "Tag - [Must be present or image will not save]" %>
+        <%= form.select(:tag_id, Tag.all.collect {|p| [ p.name, p.id ] }, { include_blank: ""}) %>
+    </div>
+
+    <div class="input-field col s6 m6">
+        <div class="file-field input-field">
+            <div class="btn grey darken-4">
+                <span>Images</span>
+                <%= form.file_field :photos, multiple: true, accept: 'image/png,image/gif,image/jpeg' %>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload Images Here">
+            </div>
+        </div>
+    </div>
+
+    <div class="input-field actions col s12 m12">
+        <%= form.submit "Upload Image", class: 'btn grey darken-4' %>
+    </div>
+    <% end %>
+</div>

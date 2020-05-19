@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "egraphics360-218400",
+  "private_key_id": "67e298bd6c940497fe4187ff224dc9c76f794008",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDg97yPTFpLO57Y\nIkmwb2BNby0HznBBeQF8vgSuvz3Wwp/9+SZ+E6FKpEMZYstE6dKy7PYASIBP8fPH\nHj5+1uuuL6o2k/wkHXO5O9C69mS22sQSmbQtEEf7I17QIbvYGkQVVrP8bH3GKnY2\nrwycwl8TDbGyRCZ+2AGcEK/gxw1swJ2HMjSl2JBSWXVWjmyjkQ5LavS3/zPO3m+0\nIs6kZb8c1SNbBKWUfczJ7zNB4EU/dOs+uzmB4vwcWX9ZkPrw/lSNBpctpBZ53dsX\nEXrlVUQGQSJVkx1bb24xAxAoy3HdmRvLi8wW0BVpthpyOdtelsmeOpGplFyJrl2M\nPcKaij+nAgMBAAECggEAV1GhFSfIJkpiabbJTlu0j+m2m0CUDr2mh6IDlEYzfO+3\nBO+Xcrkw0hV229weVMXDG+LgyxRZBW6+tcs166qE+OuUUDHZXLU3zS574o2vYs//\n6c5SAmm+3qoIa5WkYQk04ulv2+rKWMfzcV85cID7QRyAG9ba8EHsQgSyF3d7bPmN\n3pVvK2SfIly2biAWiOVzOtxRnQ4lOdJbhjENDUzKYBye629YG+IGsfan8utgcnKY\nTHB9pxvnlmtI1DBg16oB5GyNHdszWX5xVeRz01SCMF9+1VXVQE3FuYwsosb+NpZZ\nvaPNRtj3rS1iR4ALne/KLmxvZRtLhwcQua4wkIUJeQKBgQD5DFN+ypnlEWba1G3s\n9w2fxQ5gnei0OP/iDxIQYKtAAFaAegqonOVU2h818mloWuTOf5VzxmrgXe7uCzna\nN+cq7GMhy4Ux9fburv1mgcWgBFHC3mCXmK8HqWn5I/cHX4S1kI8SMHws5sGdKelN\n0vprBuH8T9AZdfffQMRggK05vwKBgQDnP1WBxcVEoJ8bCSit1knqVnEk8pWkg+Jk\n67khMGHcth/5nSNlQw2fEf2rmyQ0WtFzFuL3qIDSXBk1bExmP7i4+mYaiZz51WgP\nVHNypPaA3uacN8sQnu3O9uKrjqX2EVLeGfZPsGSZVR5UldaockAywDL92TqU7F3/\nw6H6ey9kGQKBgQC9GfDkGy4TUs1IZ3g4L7a2k8fA8OXawlT47vyGVwBxDlCgKQqi\n0M8JSL3eFnyW8j091n5CdGx+hJSBRyDcYwox+1+iL4ipUNv4jAJ4rRzDzcPPNU8e\njJ6KMMb4l6hgftSjkGoyI4KGDYkBruspXoMqdQVusaOPUZWufN0fcVUWvQKBgDbL\nSg6S9zhYuvqkA/CVCzSswOiZVp4B5h41wMs9dKLgwNjbxCxVZB/iGnKUM1L4hhK4\nRJWcZtHxosOG4t+Dj9i89H6rRvfn+l1PjH+I2SQWLRytF7/beMwGshUmmuqgljss\nebHOQTgX9DTkwFVvpQihhDOkSn5JN8jH6VS55bPZAoGAQOV8it5OZOCfCyQffM1r\nFxiI657m4o55IO1kVtmAMB3temWUXcfVm54cGvl8UWlICP5EQcz+sAYnlY27XyZ7\nYqNaC8Ftg7nw5HAfZVaKxik+EtZbvLkb9gqK/oHSY1/h9eoAksD56i+XNYOQMXK7\nRbrokrKWY4+UdBEhg49UHWY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "femi-egraphics@egraphics360-218400.iam.gserviceaccount.com",
+  "client_id": "101172899620253751085",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/femi-egraphics%40egraphics360-218400.iam.gserviceaccount.com"
+}

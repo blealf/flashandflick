@@ -1,0 +1,17 @@
+
+<div class="container">
+    <p> You have a new message from <%= @contact.first_name %> </p>
+    <p>
+        Meta<br>
+        -----------------------------------------------
+    </p>
+    <p>First Name: <%= @contact.first_name %></p>
+    <p>Last Name: <%= @contact.last_name %></p>
+    <p>Email: <%= @contact.email %></p>
+    <p>Phone: <%= @contact.phone %></p>
+    <p>
+        Message:<br>
+        -----------------------------------------------
+    </p>
+    <p><%= @contact.message %></p>
+</div>

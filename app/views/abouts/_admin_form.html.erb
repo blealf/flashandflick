@@ -1,0 +1,31 @@
+<div class="container">
+    <%= semantic_form_for [:admin, @about], class: 'row', builder: ActiveAdmin::FormBuilder do |form|%>
+
+
+        <div class="input-field col s12">
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+        </div>
+
+        <div class="input-field col s6 m6">
+            <%= form.label "Social Account or About Me" %><br>
+            <%= form.select :social, About.social_type, {:include_blank => ""}, class: 'grey darken-4' %>
+        </div>
+
+        <div class="input-field col s12">
+            <%= form.label "Links or email address" %>
+            <%= form.text_field :link %>
+        </div>
+
+
+        <div class="input-field col s12">
+            <%= form.label "Write a description if selected about me above" %>
+            <%= form.text_area :description, :class => "text_area" %>
+        </div>
+
+
+        <div class="actions col s12 m12">
+            <%= form.submit class: 'btn grey darken-4 center' %>
+        </div>
+    <% end %>
+</div>

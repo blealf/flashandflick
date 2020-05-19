@@ -1,0 +1,104 @@
+// Place all the styles related to the Galleries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url('https://fonts.googleapis.com/css?family=Vidaloka');
+
+
+.parallax-container {
+    // color: #843C00;
+    h1{
+        font-family: 'Vidaloka', serif;
+        font-size: 5rem;
+    }
+    h3{
+        font-family: 'Vidaloka', serif;
+        font-size: 3rem;
+    }
+    .parallax {
+        opacity: 0.7;
+    }
+}
+.new_btn {
+    margin-bottom: 10px;
+}
+.card img {
+    // width: 100%;
+    height: 200px;
+}
+.actions {
+    margin-top: 30px;
+}
+// chips
+.sort_wrapper {
+    margin-top: 20px;
+    margin:0 auto;
+    max-width: 1200px;   
+}
+.chip {
+    a {
+        color: black;
+    }
+}
+// Pagination
+.pagination_controls {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+// ====================================
+//  For photography and design pages
+.gallery_c {
+    margin-top: -80px;
+}
+.services{
+    margin-top: -50px;
+
+    .card {
+        color: #212121;
+        margin-bottom: 1px;
+        // justify-content: space-between;
+    }
+    .card-title, .card-content {
+        padding: 0px 3px 1px 4px;
+    }
+    span {
+        text-align: center;
+    }
+    a {
+        color: #263238;
+    }
+}
+//==================================
+
+/* label focus color */
+.input-field input:focus + label, .input-field textarea:focus {
+    color: #212121 !important;
+}
+/* label underline focus color */
+.row .input-field input:focus, .input-field textarea:focus {
+    border: none;
+    border-bottom: 1px solid #212121 !important;
+    box-shadow: 0 1px 0 0 #212121 !important;
+}
+select {
+    color: #212121 !important;
+}
+    
+
+@media only screen and (max-width: 600px) {
+    .card img {
+        // width: 100%;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .card img {
+        // width: 100%;
+        height: 300px;
+    }
+}
+

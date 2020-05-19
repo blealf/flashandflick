@@ -1,0 +1,52 @@
+<div class="container">
+  <%= form_with(model: contact, local: true, class: 'row') do |form| %>
+    <% if contact.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+        <ul>
+          <% contact.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, required: true %>
+    </div>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
+      <%= form.label :email %>
+      <%= form.text_field :email, type: 'email', pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', required: true, placeholder: 'example@email.com' %>
+    </div>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">phone</i>
+      <%= form.label :phone %>
+      <%= form.text_field :phone %>
+    </div>
+
+    <div class="input-field col s12">
+      <i class="material-icons prefix">message</i>
+      <%= form.label :message %>
+      <%= form.text_area :message, id: "textarea1", required: true %>
+    </div>
+
+    <div class="actions col s12">
+      <%= form.submit "Send Message", class: "btn grey darken-4 center"  %>
+    </div>
+  <% end %>
+</div>

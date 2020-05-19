@@ -1,0 +1,85 @@
+<div class="parallax-container">
+    <h1 class="center blue-grey-text text-darken-4">Flash & Flick</h1>
+    <h3 class="center blue-grey-text text-darken-4">Photography and Graphic Designs</h3>
+    <div class="parallax"><img src="<%= url_for(@parallax1) %>"></div>
+</div>
+
+<div class="section grey lighten-4">
+    <div class="row container">
+        <h3 class="header center blue-grey-text text-darken-4">What Can I Do For You</h3>
+        <div class="points">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card grey lighten-4">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <i class="activator fas fa-camera-retro"></i>
+                            <!-- <i class="activator material-icons">camera</i> -->
+                        </div>
+                        <div class="card-content grey lighten-2">
+                            <span class="card-title activator grey-text text-darken-4">Photography<i class="material-icons right">more_vert</i></span>
+                            <p><a class="blue-grey-text text-darken-4" href="<%= photography_index_path%>">Learn more</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Photography<i class="material-icons right">close</i></span>
+                            <ul class="collection">
+                                <% @photography.each do |service| %>
+                                <li class="collection-item">
+                                    <%= service.name %><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                    <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col s12 m6">
+                    <div class="card grey lighten-4">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <i class="activator fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="card-content grey lighten-2">
+                            <span class="card-title activator grey-text text-darken-4">Graphic Design<i class="material-icons right">more_vert</i></span>
+                            <p><a class="blue-grey-text text-darken-4" href="<%= design_index_path%>">Learn more</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Graphic Design<i class="material-icons right">close</i></span>
+                            <ul class="collection">
+                                <% @design.each do |service| %>
+                                <li class="collection-item">
+                                    <%= service.name %><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                    <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="parallax-container">
+    <div class="parallax"><img src="<%= url_for(@parallax2) %>"></div>
+</div> -->
+
+
+<div>
+    <!-- Slider -->
+    <section class="slider">
+        <ul class="slides">
+            <% @main_images.each do |image| %>
+            <li>
+                <%# image.photos.each do |photo| %>
+                    <img src="<%= url_for(image.photos[0]) %>"> <!-- random image -->
+                <%# end %>
+                <div class="caption right-align">
+                    <h2>
+                        <%= image.caption%>
+                    </h2>
+                    <h5 class="hide-on-small-only">
+                        <%= image.sub_caption%>
+                    </h5>
+                </div>
+            </li>
+            <% end %>
+    </section>
+
+    
+</div>

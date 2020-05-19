@@ -1,0 +1,69 @@
+<h3 class="center">Gallery</h3>
+
+
+
+<div class="container">
+  <section class="slider gallery_slider">
+    <ul class="slides">
+      <% @gallery_top.each do |gallery| %>
+      <% gallery.photos.each do |image| %>
+      <li>
+        <img src="<%= url_for(image) %>">
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </section>
+</div>
+
+
+
+<div class="container new_btn">
+  <% if current_admin_user.present? %>
+  <%= link_to 'Upload New Image', new_gallery_path, class: 'btn teal' %>
+  <% end %>
+</div>
+
+
+<div class="container">
+  <div class="chips">
+    <% Tag.all.each do |tag|%>
+    <div class="chip">
+      <%= link_to  tag.name, galleries_path(:tag => tag.name, :page => 1) %>
+      <%#= tag.name %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%# require 'will_paginate/array' %>
+<div class="pagination_controls">
+  <%#= will_paginate @render_photos%>
+</div>
+
+<div class="row">
+  
+  <% @my_photos.each do |photo| %>
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag url_for(photo), class: 'materialboxed responsive-img' %>
+        </div>
+      
+        <%# if current_admin_user.present? %>
+          <div class="card-content" id="<%#=photo%>">
+            <%# if gallery.photos.length == 1%>
+              <%#= link_to 'Edit', edit_gallery_path(gallery), class: 'btn green' %>
+            <%# end %>
+            <%#= link_to 'Delete', delete_one_image_gallery_path(photo), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red delete'  %>
+          </div>
+        <%# end %>
+      </div>
+    </div>
+  <% end %>
+  
+</div>
+
+<div class="pagination_controls">
+  <%#= will_paginate @render_photos%>
+</div>
+
