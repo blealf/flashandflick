@@ -14,6 +14,4 @@ class Photo < ApplicationRecord
     #     end
     #     return @photos
     # end
-
-
 end
